@@ -1,1 +1,1 @@
-# nd00333_AZMLND_C2
+# Read readme of starter_file folder
