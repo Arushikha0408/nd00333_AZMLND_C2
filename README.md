@@ -65,14 +65,23 @@ Ensure that Docker is installed on your computer. Azure provides a Swagger JSON 
 
 In Azure ML Studio, head over to the "Endpoints" section and find a previously deployed model. The compute type should be ACI (Azure Container Instance). In the "Consume" tab, of the endpoint, a "Basic consumption info" will show the endpoint URL and the authentication types. Take note of the URL and the "Primary Key" authentication type. Using the provided endpoint.py replace the scoring_uri and key to match the REST endpoint and primary key respectively. The script issues a POST request to the deployed model and gets a JSON response that gets printed to the terminal. A data.json file will appear after you run endpoint.py.
 
-![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/git1.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/benchmark1.PNG)
 
 Make sure you have the Apache Benchmark command-line tool installed and available in your path. Run the endpoint.py. Just like before, it is important to use the right URI and Key to communicate with the deployed endpoint. A data.json should be present. This is required for the next step where the JSON file is used to HTTP POST to the endpoint. In the provided started code, there is a benchmark.sh script with a call to ab.
+
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/benchmark2.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/benchmark3.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/benchmark4.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/benchmark5.PNG)
 
 
 **Step-9: Create a Pipeline.**
 
 Open up the Jupyter Notebook and make sure you replace all of the URIs, Keys, and experiment names to match your own. Anywhere noted, ensure that the right components are replaced as shown in the next screenshot. Run the Jupyter Notebook all the way up until the Examine Results section. In the end, the pipeline should be available in Azure ML Studio in the Pipelines section. Clicking on the Pipeline should take you to the experiment that demonstrates the graph using the Bankmarketing Dataset and the Auto ML Model. You can choose to keep running through the cells in the Examine Results section to retrieve metrics and the best model.
+
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/pipeline1.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/pipeline1.1.PNG)
+
 
 **Step-10: Publish a pipeline either in the ML studio or with the Python SDK.**
 
@@ -80,10 +89,13 @@ ML Studio: In Azure ML Studio, under the Pipelines section, you will get to a li
 
 Python SDK: Create experiment and pipeline_run. The experiment and run_id of that experiment are crucial. Update the experiment name, project_folder and the run id. Once the pipeline_run object is created, you can publish the pipeline.
 
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/pipeline2.PNG)
+
 **Step-11: Consume a pipeline.**
 
 Once the pipeline is published, you can authenticate. Next, the published pipeline will be used to retrieve the endpoint. This endpoint is the URI that the SDK will use to communicate with it over HTTP requests. Once the Jupyter Notebook completes all of its steps, the Pipeline will be triggered and available in Azure ML Studio.
 
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/pipeline2.1.PNG)
 ![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/bakmarketing_pipeline1.PNG)
 ![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/bakmarketing_pipeline.PNG)
 
