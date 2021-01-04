@@ -1,7 +1,7 @@
 # Operationalizing Machine Learning
 
 ## Project overview
-In this project, I will use Azure to configure a cloud-based machine learning production model, deploy it, and consume it. I will also create, publish, and consume a pipeline. In the end, I will fully demonstrate all of my work in this README file.
+In this project, we need to configure a cloud-based machine learning production model using Azure, deploy it and consume it. The aim of the project was to learn about Operationalizing Machine Learning model by deploying a machine learning model to an endpoint which is a URL that can be easily accessed by any end-user. I will also create, publish, and consume a pipeline. In the end, I will fully demonstrate all of my work in this README file.
 
 I will be working with the Bank Marketing dataset, it is related with direct marketing campaigns (phone calls) of a Portuguese banking institution. The classification goal is to predict if the client will subscribe a term deposit (y). It consists of 20 input variables (columns) and 32,950 rows with 3,692 positive classes and 29,258 negative classes. I will use AutoML to train a model, then deploy the model as a REST endpoint, and test that it's working.
 
@@ -13,7 +13,7 @@ The bank marketing dataset used in this project can be found in the link below: 
 The diagram above shows the workflow of operationalizing machine learning starting from the creation of an experiment using Automated ML, deployment of the best performing model after the completion of the experiment, enabling Application Insights and retrieving logs, consuming the deployed model using Swagger and lastly, consuming the deployed model endpoints by using the endpoint.py script provided to interact with the trained model.
 
 ## Key Steps
-**Step-1: Upload the bank marketing datasets to the azure machine learning studio, so that it becomes a readily available registered dataset for use.**
+**Step-1: Upload the bank marketing datasets to the azure machine learning studio. **
 
 ![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/dataset1.PNG)
 
@@ -21,10 +21,9 @@ The diagram above shows the workflow of operationalizing machine learning starti
 
 ![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/automl_run1.PNG)
 
-**Step-3: Get the best performing model to be VotingEnsemble with an AUC_weighted score of 0.94687.**
+**Step-3: Get the best performing model to be VotingEnsemble with an AUC_weighted score of 0.94550.**
 
 ![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/votingensemble1.PNG)
-
 ![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/votingensemble2.PNG)
 
 **Step-4: Besides the VotingEnsemble model, we have other models that were generated during the iteration procees.**
@@ -66,6 +65,8 @@ Ensure that Docker is installed on your computer. Azure provides a Swagger JSON 
 
 In Azure ML Studio, head over to the "Endpoints" section and find a previously deployed model. The compute type should be ACI (Azure Container Instance). In the "Consume" tab, of the endpoint, a "Basic consumption info" will show the endpoint URL and the authentication types. Take note of the URL and the "Primary Key" authentication type. Using the provided endpoint.py replace the scoring_uri and key to match the REST endpoint and primary key respectively. The script issues a POST request to the deployed model and gets a JSON response that gets printed to the terminal. A data.json file will appear after you run endpoint.py.
 
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/git1.PNG)
+
 Make sure you have the Apache Benchmark command-line tool installed and available in your path. Run the endpoint.py. Just like before, it is important to use the right URI and Key to communicate with the deployed endpoint. A data.json should be present. This is required for the next step where the JSON file is used to HTTP POST to the endpoint. In the provided started code, there is a benchmark.sh script with a call to ab.
 
 
@@ -88,6 +89,3 @@ Once the pipeline is published, you can authenticate. Next, the published pipeli
 
 ## Screen Recording
 Link to the screen recording is - 
-
-## Standout Suggestions
-The use of ParallelRunSteps can help in creating an Azure Machine Learning Pipeline step to process large amounts of data asynchronously and in parallel. It simplifies scaling up and out large machine learning workloads so data scientists and engineers can spend less time developing computer programs and focus on business objectives. It is a resilient and highly available solution. While the system manages the strategy, you also have the control of when to timeout your job, how many times to retry and how many errors to tolerant. ParallelRunStep is flexibly designed for a variety of workloads. It’s not just for batch inference, but also other workloads which necessitate parallel processing, for example, training many models concurrently, or processing large amount of data.
