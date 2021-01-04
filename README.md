@@ -13,7 +13,7 @@ The bank marketing dataset used in this project can be found in the link below: 
 The diagram above shows the workflow of operationalizing machine learning starting from the creation of an experiment using Automated ML, deployment of the best performing model after the completion of the experiment, enabling Application Insights and retrieving logs, consuming the deployed model using Swagger and lastly, consuming the deployed model endpoints by using the endpoint.py script provided to interact with the trained model.
 
 ## Key Steps
-**Step-1: Upload the bank marketing datasets to the azure machine learning studio. **
+**Step-1: Upload the bank marketing datasets to the azure machine learning studio.**
 
 ![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/dataset1.PNG)
 
