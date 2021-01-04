@@ -2,9 +2,10 @@ import requests
 import json
 
 # URL for the web service, should be similar to:
-scoring_uri = 'http://f0c8ba2a-7bf1-4ff9-9255-c0fd5a91b33d.southcentralus.azurecontainer.io/score'
+# 'http://8530a665-66f3-49c8-a953-b82a2d312917.eastus.azurecontainer.io/score'
+scoring_uri = 'http://75226d3c-6723-434e-9faf-4384ded80cc7.southcentralus.azurecontainer.io/score'
 # If the service is authenticated, set the key or token
-key = '05f37123-67e1-48bd-9ee3-20d8f12ab03d'
+key = 'LIUB9AOSPKL8I9Vf93c60BEMkNbOCV4R'
 
 # Two sets of data to score, so we get two results back
 data = {"data":
@@ -68,3 +69,5 @@ headers['Authorization'] = f'Bearer {key}'
 # Make the request and display the response
 resp = requests.post(scoring_uri, input_data, headers=headers)
 print(resp.json())
+
+
