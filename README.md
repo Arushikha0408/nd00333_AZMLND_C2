@@ -9,28 +9,58 @@ The bank marketing dataset used in this project can be found in the link below: 
 
 ## Architectural Diagram
 ![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/architecture.PNG)
+
 The diagram above shows the workflow of operationalizing machine learning starting from the creation of an experiment using Automated ML, deployment of the best performing model after the completion of the experiment, enabling Application Insights and retrieving logs, consuming the deployed model using Swagger and lastly, consuming the deployed model endpoints by using the endpoint.py script provided to interact with the trained model.
 
 ## Key Steps
 **Step-1: Upload the bank marketing datasets to the azure machine learning studio, so that it becomes a readily available registered dataset for use.**
 
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/dataset1.PNG)
+
 **Step-2: Create an experiment using Automated ML, configure a compute cluster with vm_size of 'STANDARD_DS12_V2, and use that cluster to run the experiment.**
+
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/automl_run1.PNG)
 
 **Step-3: Get the best performing model to be VotingEnsemble with an AUC_weighted score of 0.94687.**
 
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/votingensemble1.PNG)
+
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/votingensemble2.PNG)
+
 **Step-4: Besides the VotingEnsemble model, we have other models that were generated during the iteration procees.**
+
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/otheralgo.PNG)
 
 **Step-5: Deploy the Best Model(VotingEnsemble).**
 
 Go to the Automated ML section and find the recent experiment with a completed status. Click on it. Go to the "Model" tab and select the votingensemble model from the list and click it. Above it, a triangle button (or Play button) will show with the "Deploy" word. Click on it. Then fill out the form with a meaningful name and description. For Compute Type use Azure Container Instance (ACI) and Enable Authentication. Do not change anything in the Advanced section. Then deploy. Deployment takes a few seconds. After a successful deployment, a green checkmark will appear on the "Run" tab and the "Deploy status" will show as succeed.
 
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/deploy_details1.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/deploy_details2.PNG)
+
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/deploy_status.PNG)
+
 **Step-6: Enable Application Insights.**
 
 Download the config.json file from the top left menu in the Azure portal. Put this file in the same directory of other files needed for this project. Find the previously deployed model to verify its name. It is needed in the SDK to select it for enabling logging. In this example, exercise-deployment-1 is the name of the service. This information is available from the Endpoints section. To enable application insights, we'll add: service.update(enable_app_insights=True) to the logs.py file to enable logging.
 
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/logs1.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/logs2.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/logs3.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/logs4.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/logs5.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/logs6.PNG)
+
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/deploy_authentication_made_true.PNG)
+
 **Step-7: Swagger documentation**
 
 Ensure that Docker is installed on your computer. Azure provides a Swagger JSON file for deployed models, so head to the Endpoints section, and find your deployed model there. Click on the name of the model, and details will open that contains a Swagger URI section. Download the file locally to your computer and put it in the same directory with serve.py and swagger.sh. Serve.py will start a Python server on port 8000. This script needs to be right next to the downloaded swagger.json file. NOTE: this will not work if swagger.json is not on the same directory. Since I didn't have permissions for port 80 on my computer, I updated the script to a higher number of 9000. I made use of localhost on port 9000 to display the Swagger page while ensuring that the updated port is used when trying to reach the swagger instance by localhost, for example localhost:9000/swagger.json
+
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/swagger1.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/swagger2.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/swagger3.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/swagger4.PNG)
 
 **Step-8: Modify the scoring uri and key to match the deployed service generated and execute the endpoint.py file with python. You can then benchmark the endpoint using Apache benchmark to run against the HTTP API using authentication keys to retrieve performance.**
 
@@ -53,6 +83,8 @@ Python SDK: Create experiment and pipeline_run. The experiment and run_id of tha
 
 Once the pipeline is published, you can authenticate. Next, the published pipeline will be used to retrieve the endpoint. This endpoint is the URI that the SDK will use to communicate with it over HTTP requests. Once the Jupyter Notebook completes all of its steps, the Pipeline will be triggered and available in Azure ML Studio.
 
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/bakmarketing_pipeline1.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/bakmarketing_pipeline.PNG)
 
 ## Screen Recording
 Link to the screen recording is - 
