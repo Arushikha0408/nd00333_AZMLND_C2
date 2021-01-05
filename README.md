@@ -100,4 +100,4 @@ Once the pipeline is published, you can authenticate. Next, the published pipeli
 ![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/bakmarketing_pipeline.PNG)
 
 ## Screen Recording
-Link to the screen recording is - 
+Link to the screen recording is - https://drive.google.com/file/d/14xA6woAFR6t0prLCYmHZ3hadkEDm5MBb/view?usp=sharing
