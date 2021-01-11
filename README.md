@@ -101,3 +101,6 @@ Once the pipeline is published, you can authenticate. Next, the published pipeli
 
 ## Screen Recording
 Link to the screen recording is - https://drive.google.com/file/d/14xA6woAFR6t0prLCYmHZ3hadkEDm5MBb/view?usp=sharing
+
+## Ideas for Improvement 
+If you more larger dataset and introduce deep learning model into picture, than we would have got better response. Also, we can use ParallelRunSteps that can help in creating an Azure ML Pipeline step to process large amount of data asynchronously and in parallel. It is a resilient and highly available solution. ParallelRunStep is flexibly designed for a variety of workloads. It’s not just for batch inference, but also other workloads which necessitate parallel processing, for example, training many models concurrently, or processing large amount of data.
