@@ -89,7 +89,13 @@ ML Studio: In Azure ML Studio, under the Pipelines section, you will get to a li
 
 Python SDK: Create experiment and pipeline_run. The experiment and run_id of that experiment are crucial. Update the experiment name, project_folder and the run id. Once the pipeline_run object is created, you can publish the pipeline.
 
-![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/pipeline2.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/published_pipeline1.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/published_pipeline2.PNG)
+
+A screenshot of the Jupyter Notebook is included in the submission showing the “Use RunDetails Widget” with the step runs
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/RunDetails1.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/RunDetails2.PNG)
+![alt text](https://github.com/Arushikha0408/nd00333_AZMLND_C2/blob/master/starter_files/RunDetails3.PNG)
 
 **Step-11: Consume a pipeline.**
 
